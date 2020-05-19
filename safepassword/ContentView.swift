@@ -7,12 +7,34 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(fetchRequest: User.getUser()) var Users: FetchedResults<User>
+    @State var signUpUser = false
+    @State var signInSuccess = false
+    //let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    @State var userPass: String = ""
+    
+    
     var body: some View {
-        Text("Hello, World!")
+        
+        Group {
+            if userPass != "" {
+                SignView()
+            } else {
+                SignUp()
+            }
+        }.onAppear {
+            //self.authenticate()
+            for user in self.Users {
+                self.userPass = user.password ?? ""
+            }
+        }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

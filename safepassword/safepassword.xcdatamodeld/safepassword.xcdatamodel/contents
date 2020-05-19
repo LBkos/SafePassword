@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="true" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="PasswordItem" representedClassName="PasswordItem" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Transformable" customClassName="NSManagedObjectID"/>
+        <attribute name="login" optional="YES" attributeType="String"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="service" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="password" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="PasswordItem" positionX="-296.25" positionY="-18.921875" width="128" height="103"/>
+        <element name="User" positionX="-1.9765625" positionY="-63.48828125" width="128" height="58"/>
+    </elements>
 </model>
