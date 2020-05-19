@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,13 +28,12 @@
 		5386BAD5246AAFE900EB17F0 /* DetailPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386BACB246AAFE900EB17F0 /* DetailPassword.swift */; };
 		538D3CB9246EAF830089076D /* GeneratePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D3CB8246EAF830089076D /* GeneratePasswordView.swift */; };
 		538D3CBB246EBB390089076D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D3CBA246EBB390089076D /* Model.swift */; };
-		53D69129246ABD1B00C682CA /* OrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D69128246ABD1B00C682CA /* OrView.swift */; };
 		53F84BE224714AFD00D37631 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F84BE124714AFD00D37631 /* AuthenticationServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		537D1ED52471252A003A9466 /* BiometricModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricModel.swift; sourceTree = "<group>"; };
-		5386BA9D246966FF00EB17F0 /* safepassword.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = safepassword.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5386BA9D246966FF00EB17F0 /* SafePassword.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafePassword.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5386BAA0246966FF00EB17F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5386BAA2246966FF00EB17F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5386BAA5246966FF00EB17F0 /* safepassword.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = safepassword.xcdatamodel; sourceTree = "<group>"; };
@@ -56,7 +55,6 @@
 		5386BACB246AAFE900EB17F0 /* DetailPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPassword.swift; sourceTree = "<group>"; };
 		538D3CB8246EAF830089076D /* GeneratePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratePasswordView.swift; sourceTree = "<group>"; };
 		538D3CBA246EBB390089076D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		53D69128246ABD1B00C682CA /* OrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrView.swift; path = View/OrView.swift; sourceTree = "<group>"; };
 		53F84BDF24714AFC00D37631 /* safepassword.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = safepassword.entitlements; sourceTree = "<group>"; };
 		53F84BE124714AFD00D37631 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -85,7 +83,7 @@
 		5386BA9E246966FF00EB17F0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5386BA9D246966FF00EB17F0 /* safepassword.app */,
+				5386BA9D246966FF00EB17F0 /* SafePassword.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,19 +94,12 @@
 				53F84BDF24714AFC00D37631 /* safepassword.entitlements */,
 				5386BAA0246966FF00EB17F0 /* AppDelegate.swift */,
 				5386BAA2246966FF00EB17F0 /* SceneDelegate.swift */,
-				53D69128246ABD1B00C682CA /* OrView.swift */,
-				5386BAA7246966FF00EB17F0 /* ContentView.swift */,
+				5386BAC4246AAFE900EB17F0 /* View */,
+				53DD0CDA2473F28C0061BECA /* Model */,
+				53DD0CDB2473F2A20061BECA /* CoreData */,
 				5386BAA92469670000EB17F0 /* Assets.xcassets */,
 				5386BAAE2469670000EB17F0 /* LaunchScreen.storyboard */,
 				5386BAB12469670000EB17F0 /* Info.plist */,
-				538D3CBA246EBB390089076D /* Model.swift */,
-				537D1ED52471252A003A9466 /* BiometricModel.swift */,
-				5386BAC4246AAFE900EB17F0 /* View */,
-				5386BAB9246A6F0400EB17F0 /* User+CoreDataClass.swift */,
-				5386BABA246A6F0400EB17F0 /* User+CoreDataProperties.swift */,
-				5386BAB7246A6F0400EB17F0 /* PasswordItem+CoreDataClass.swift */,
-				5386BAB8246A6F0400EB17F0 /* PasswordItem+CoreDataProperties.swift */,
-				5386BAA4246966FF00EB17F0 /* safepassword.xcdatamodeld */,
 				5386BAAB2469670000EB17F0 /* Preview Content */,
 			);
 			path = safepassword;
@@ -125,6 +116,7 @@
 		5386BAC4246AAFE900EB17F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5386BAA7246966FF00EB17F0 /* ContentView.swift */,
 				5386BAC1246A711E00EB17F0 /* SignView.swift */,
 				5386BAC5246AAFE900EB17F0 /* DetailView.swift */,
 				5386BAC6246AAFE900EB17F0 /* SettingsView.swift */,
@@ -135,6 +127,27 @@
 				538D3CB8246EAF830089076D /* GeneratePasswordView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		53DD0CDA2473F28C0061BECA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				538D3CBA246EBB390089076D /* Model.swift */,
+				537D1ED52471252A003A9466 /* BiometricModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		53DD0CDB2473F2A20061BECA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5386BAB9246A6F0400EB17F0 /* User+CoreDataClass.swift */,
+				5386BABA246A6F0400EB17F0 /* User+CoreDataProperties.swift */,
+				5386BAB7246A6F0400EB17F0 /* PasswordItem+CoreDataClass.swift */,
+				5386BAB8246A6F0400EB17F0 /* PasswordItem+CoreDataProperties.swift */,
+				5386BAA4246966FF00EB17F0 /* safepassword.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		53F84BE024714AFD00D37631 /* Frameworks */ = {
@@ -162,7 +175,7 @@
 			);
 			name = safepassword;
 			productName = safepassword;
-			productReference = 5386BA9D246966FF00EB17F0 /* safepassword.app */;
+			productReference = 5386BA9D246966FF00EB17F0 /* SafePassword.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -229,7 +242,6 @@
 				538D3CBB246EBB390089076D /* Model.swift in Sources */,
 				5386BABB246A6F0400EB17F0 /* PasswordItem+CoreDataClass.swift in Sources */,
 				5386BAA8246966FF00EB17F0 /* ContentView.swift in Sources */,
-				53D69129246ABD1B00C682CA /* OrView.swift in Sources */,
 				5386BAD3246AAFE900EB17F0 /* PasswordView.swift in Sources */,
 				5386BAD4246AAFE900EB17F0 /* RowView.swift in Sources */,
 				5386BAA6246966FF00EB17F0 /* safepassword.xcdatamodeld in Sources */,
@@ -381,7 +393,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Konstantin-Lopatkin.safepassword";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SafePassword;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -402,7 +414,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Konstantin-Lopatkin.safepassword";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SafePassword;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

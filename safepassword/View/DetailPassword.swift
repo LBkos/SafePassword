@@ -17,8 +17,8 @@ struct DetailPassword: View {
     @State var service: String = ""
     @State var login: String = ""
     @State var password: String = ""
-    @State var id: NSManagedObjectID
-    @ObservedObject var model = Model()
+    //@State var id: NSManagedObjectID?
+    //@ObservedObject var model = Model()
     
     var body: some View {
         Form {
@@ -27,15 +27,13 @@ struct DetailPassword: View {
             TextField("", text: $password)
             
         }
-        .navigationBarItems(trailing: Button(action: {
-            self.backList.toggle()
-            self.model.update(id: self.id, service: self.service, login: self.login, password: self.password)
-            self.presentationMode.wrappedValue.dismiss()
-            
-        }) {
-            Text("Сохранить")
-            }
-        )
+//        .navigationBarItems(trailing: Button(action: {
+//            self.backList.toggle()
+//            self.presentationMode.wrappedValue.dismiss()
+//        }) {
+//            Text("Сохранить")
+//            }
+//        )
             .navigationBarTitle("\(self.service)", displayMode: .inline)
     }
 }

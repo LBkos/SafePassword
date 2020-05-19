@@ -22,7 +22,7 @@ struct ListView: View {
             VStack(alignment: .leading) {
                 List {
                     ForEach(self.PasswordItems) { passwordItem in
-                        NavigationLink(destination: DetailPassword(service: passwordItem.service ?? "service", login: passwordItem.login ?? "", password: passwordItem.password ?? "", id: passwordItem.id)) {
+                        NavigationLink(destination: DetailPassword(service: passwordItem.service ?? "service", login: passwordItem.login ?? "", password: passwordItem.password ?? "")) {
                             PasswordView(service: passwordItem.service ?? "service")
                         }
                     }.onDelete { IndexSet in

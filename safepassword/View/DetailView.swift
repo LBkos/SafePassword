@@ -42,7 +42,6 @@ struct DetailView: View {
                 passwordItem.setValue(self.service, forKey: "service")
                 passwordItem.setValue(self.login, forKey: "login")
                 passwordItem.setValue(self.password, forKey: "password")
-               // passwordItem.url = self.URLItems
                 do {
                     try self.managedObjectContext.save()
                    // print("good save")
