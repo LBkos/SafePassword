@@ -8,6 +8,7 @@
 
 import SwiftUI
 import CoreData
+import CryptoKit
 
 struct ListView: View {
     
@@ -15,15 +16,15 @@ struct ListView: View {
     @FetchRequest(fetchRequest: PasswordItem.getPasswordItem()) var PasswordItems: FetchedResults<PasswordItem>
     
     @State private var showingDetail = false
-
+    @ObservedObject var model = Model()
     
     var body: some View {
         //NavigationView {
             VStack(alignment: .leading) {
                 List {
                     ForEach(self.PasswordItems) { passwordItem in
-                        NavigationLink(destination: DetailPassword(service: passwordItem.service ?? "service", login: passwordItem.login ?? "", password: passwordItem.password ?? "")) {
-                            PasswordView(service: passwordItem.service ?? "service")
+                        NavigationLink(destination: DetailPassword(service: passwordItem.service ?? "", login: passwordItem.login ?? "", solt: self.model.AESDecrypt(solt: passwordItem.solt ?? []))) {
+                            PasswordView(service: passwordItem.service ?? "")
                         }
                     }.onDelete { IndexSet in
                         let deleteItem = self.PasswordItems[IndexSet.first!]
@@ -49,8 +50,8 @@ struct ListView: View {
         //}
     }//body
 }//struct ListView
-struct ListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ListView()
-    }
-}
+//struct ListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListView()
+//    }
+//}

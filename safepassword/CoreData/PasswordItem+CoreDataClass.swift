@@ -15,5 +15,6 @@ public class PasswordItem: NSManagedObject, Identifiable {
     @NSManaged public var service: String?
     @NSManaged public var password: String?
     @NSManaged public var login: String?
-    //@NSManaged public var id: NSManagedObjectID?
+    @NSManaged public var solt: Array<UInt8>?
+    
 }

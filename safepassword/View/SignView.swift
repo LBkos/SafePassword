@@ -15,7 +15,7 @@ struct SignView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(fetchRequest: User.getUser()) var Users: FetchedResults<User>
     @State var signInSuccess = false
-    @State var signUpUser = false
+    //@State var signUpUser = false
     
     
     var body: some View {
@@ -143,7 +143,7 @@ struct SignInView: View {
             let reson = "Приложите палец, чтобы войти в приложение"
             
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reson) {  success, authenticationError in
-                DispatchQueue.main.async {
+                DispatchQueue.global().async {
                     if success {
                         self.signInSuccess = true
                     } else {

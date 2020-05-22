@@ -8,32 +8,36 @@
 
 import SwiftUI
 import CoreData
+import CryptoSwift
+
 
 struct DetailPassword: View {
+    @ObservedObject var model = Model()
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(fetchRequest: PasswordItem.getPasswordItem()) var PasswordItems: FetchedResults<PasswordItem>
     @State var backList: Bool = false
     @State var service: String = ""
     @State var login: String = ""
-    @State var password: String = ""
-    //@State var id: NSManagedObjectID?
-    //@ObservedObject var model = Model()
+    //@State var password: String = ""
+    @State var solt: String = ""
     
     var body: some View {
+        
         Form {
             TextField("", text: $service)
             TextField("", text: $login).keyboardType(.emailAddress)
-            TextField("", text: $password)
-            
+            TextField("", text: $solt)
         }
-//        .navigationBarItems(trailing: Button(action: {
-//            self.backList.toggle()
-//            self.presentationMode.wrappedValue.dismiss()
-//        }) {
-//            Text("Сохранить")
-//            }
-//        )
+//                    .navigationBarItems(trailing: Button(action: {
+//                        self.backList.toggle()
+//                        print(self.password)
+//                        //self.presentationMode.wrappedValue.dismiss()
+//                    }) {
+//                        Text("Сохранить")
+//                        }
+//                    )
+            
             .navigationBarTitle("\(self.service)", displayMode: .inline)
     }
 }

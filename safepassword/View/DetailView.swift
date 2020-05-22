@@ -8,8 +8,7 @@
 
 import SwiftUI
 import CoreData
-
-
+import CryptoSwift
 
 
 struct DetailView: View {
@@ -23,6 +22,9 @@ struct DetailView: View {
     @State private var service = ""
     @State private var login = ""
     @State private var password = ""
+    //@State var encrypted: Array<UInt8> = []
+
+    @ObservedObject var model = Model()
     
     var body: some View {
         
@@ -35,19 +37,25 @@ struct DetailView: View {
                    // UIApplication.shared.endEditing()
                 }
             }
+                
 
             .navigationBarItems(trailing: Button(action: {
                 self.back.toggle()
                 let passwordItem = PasswordItem(context: self.managedObjectContext)
                 passwordItem.setValue(self.service, forKey: "service")
                 passwordItem.setValue(self.login, forKey: "login")
-                passwordItem.setValue(self.password, forKey: "password")
+                //passwordItem.setValue(self.password, forKey: "password")
                 do {
+                    let solt = self.model.AESEncrypt(password: self.password)
+                    passwordItem.setValue(solt, forKey: "solt")
+
                     try self.managedObjectContext.save()
+                    
                    // print("good save")
                 }catch let error as NSError {
                     print(error.localizedDescription)
                 }
+                
                 self.password = ""
                 self.service = ""
                 self.login = ""
